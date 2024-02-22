@@ -1,37 +1,35 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import FoodCard from "./Foodcard";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-const SearchBar = () => {
-  const [query, setQuery] = useState("");
-  const [data, setData] = useState([]);
+const SearchBar = ({ handleSearchInputChange }) => {
+  const [searchInput, setSearchInput] = useState();
+  const handleChange = (e) => {
+    setSearchInput(e.target.value);
+    handleSearchInputChange(e.target.value);
+  };
 
-  useEffect(() => {
-    axios
-      .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
-      .then((response) => {
-        setData(response.data.meals);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [query]);
-  
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearchInputChange(e.target.value);
+  };
   return (
-    <div>
+    <form
+      onSubmit={handleSubmit}
+      className=" mt-4 pt-4 flex justify-center items-center"
+    >
       <input
         type="text"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
+        name="search"
+        className="w-[80%] p-4 border border-gray-300 rounded-md"
+        value={searchInput}
+        onChange={handleChange}
+        placeholder="Search here...."
       />
-      <div>
-        {data.map((item, index) => (
-          <FoodCard key={index} item={item} size="20" />
-        ))}
-      </div>
-    </div>
+    </form>
   );
 };
 
+SearchBar.propTypes = {
+  handleSearchInputChange: PropTypes.func.isRequired,
+};
 export default SearchBar;

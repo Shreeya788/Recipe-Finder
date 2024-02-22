@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const FoodCard = ({ item }) => {
+const FoodCard = ({ item, onClick }) => {
   return (
     <div className="w-full h-[38rem] flex justify-center items-center ">
       <div className="bg-[#E7FAFE] rounded-3xl w-[85%] ">
@@ -12,7 +12,7 @@ const FoodCard = ({ item }) => {
           <p className="font-semibold text-2xl">{item.strMeal}</p>
           <p className=" line-clamp-2 text-justify  ">{item.strInstructions}</p>
           <div className="flex justify-center items-center py-4 ">
-            <button className=" bg-black text-white  py-2 rounded-md w-full">
+            <button onClick={onClick}  className=" bg-black text-white  py-2 rounded-md w-full">
               View More
             </button>
           </div>
@@ -27,6 +27,7 @@ FoodCard.propTypes = {
     strMealThumb: PropTypes.string.isRequired,
     strInstructions: PropTypes.string.isRequired,
   }),
+  onClick:PropTypes.func.isRequired,
   size: PropTypes.string.isRequired,
 };
 export default FoodCard;
