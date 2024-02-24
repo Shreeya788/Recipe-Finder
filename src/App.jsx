@@ -1,13 +1,15 @@
 import Nav from "./Components/Nav";
 
-import Detail from "./Components/Detail.jsx";
+
+
+import Footer from "./Components/Footer.jsx";
 
 const App = () => {
   return (
     <div>
       <Nav />
-
-      <Detail />
+      
+      <Footer />
     </div>
   );
 };

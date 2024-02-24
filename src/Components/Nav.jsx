@@ -7,7 +7,7 @@ const Nav = () => {
   };
   return (
     <div>
-      <div className=" px-[5%] bg-none flex justify-between items-center mt-3">
+      <div className=" px-[10%] bg-none flex justify-between items-center mt-3">
         <div className="h-8">
           <img src={logo} alt="A logo" />
         </div>
@@ -26,7 +26,7 @@ const Nav = () => {
         <div className="md:hidden">
           <button
             id="mobile-menu-button"
-            className="text-white hover:text-gray-300 focus:outline-none"
+            className="text-black hover:text-gray-300 focus:outline-none"
             onClick={toggleMenu}
           >
             <svg
