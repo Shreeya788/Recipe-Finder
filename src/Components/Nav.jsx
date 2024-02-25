@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useState } from "react";
 const Nav = () => {
@@ -16,8 +17,12 @@ const Nav = () => {
             className=" text-black
            flex font-sans font-normal text-xl"
           >
-            <li className="m-4">Home</li>
-            <li className="m-4">Recipes</li>
+            <NavLink to="/">
+              <li className="m-4">Home</li>
+            </NavLink>
+            <NavLink to={"/recipe"}>
+              <li className="m-4">Recipes</li>
+            </NavLink>
             <li className="m-4">Blog</li>
             <li className="m-4">Contact</li>
             <li className="m-4">About Us</li>

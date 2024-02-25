@@ -11,13 +11,15 @@ const Home = () => {
         title="Healthy Cooking Recipes"
         description="Never waste food again: Use what you have, cook something great!"
         Badge={Badge}
+        alt="A A Badge of like"
         image={food}
         buttonText="Explore recipes"
         bgColor="#E7FAFE"
-        padding="5%"
+        padding="p-[5%]"
+        width="2/4"
       />
       <div className="mt-5 pt-5">
-        <p className="text-5xl font-semibold text-center">
+        <p className="text-5xl font-semibold text-center ">
           Become a Professional Chef
         </p>
         <p className="text-center text-gray-500 pt-3">
@@ -30,7 +32,7 @@ const Home = () => {
         image={chef}
         buttonText="Learn more"
         bgColor="#F3FDFF"
-        padding="0%"
+        width="w-3/4"
       />
     </>
   );

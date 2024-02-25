@@ -11,7 +11,7 @@ const Footer = () => {
         </div>
         <div className="flex px-[10%] py-3 justify-between">
           <div>
-            <p className="text-gray-800 text-lg">
+            <p className="text-gray-800 text-md px-1 font-[poppin]">
               A Web app to find healthy recipes
             </p>
           </div>
