@@ -6,16 +6,18 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
-    <div>
-      <Nav />
-      <Router>
+    <Router>
+      <div>
+        <Nav />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipe" element={<Recipe />} />
         </Routes>
-      </Router>
-      <Footer />
-    </div>
+
+        <Footer />
+      </div>
+    </Router>
   );
 };
 export default App;
